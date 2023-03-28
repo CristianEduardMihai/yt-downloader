@@ -1,7 +1,5 @@
 import yt_dlp
 
-#URLS = ['https://www.youtube.com/watch?v=UtF6Jej8yb4']
-
 def download_audio(URLS):
     ydl_opts = {
         'format': 'm4a/bestaudio/best',
