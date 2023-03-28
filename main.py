@@ -27,6 +27,13 @@ style.map('TCombobox', background=[('active', '#555'), ('!disabled', '#555')], f
 dropdown = ttk.Combobox(window, values=OPTIONS, textvariable=variable, style='TCombobox')
 dropdown.pack()
 
+# if the `audio_downloads` folder doesn't exist, create it
+if not os.path.exists('audio_downloads'):
+    os.makedirs('audio_downloads')
+# if the `video_downloads` folder doesn't exist, create it
+if not os.path.exists('video_downloads'):
+    os.makedirs('video_downloads')
+
 # Create a button
 def download():
     # Disable the button while downloading
