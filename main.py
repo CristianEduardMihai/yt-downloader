@@ -50,12 +50,21 @@ def download():
         for file in os.listdir():
             if file.endswith(format):
                 os.rename(file, f'audio_downloads/{file}')
+        # open the folder
+        if os.name == 'nt':
+            os.system("explorer .\\audio_downloads")
     elif download_type == 'Video':
         format = download_video(urls)
         # move all files ending in format to a folder called 'video_downloads'
         for file in os.listdir():
             if file.endswith(format):
                 os.rename(file, f'video_downloads/{file}')
+        # open the folder
+        if os.name == 'nt':
+            os.system("explorer .\\video_downloads")
+    
+    # Print DONE
+    print('DONE')
 
     # Re-enable the button after downloading is finished
     button.config(state='normal')
